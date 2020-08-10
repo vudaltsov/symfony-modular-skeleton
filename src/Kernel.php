@@ -15,14 +15,15 @@ final class Kernel extends BaseKernel
     {
         $container->import('../config/{packages}/*.yaml');
         $container->import("../config/{packages}/{$this->environment}/*.yaml");
-        $container->import('../src/**/{di}.php');
-        $container->import("../src/**/{di}_{$this->environment}.php");
+        $container->import('./**/{di}.php');
+        $container->import("./**/{di}_{$this->environment}.php");
     }
 
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
-        $routes->import("../config/{routes}/{$this->environment}/*.yaml");
         $routes->import('../config/{routes}/*.yaml');
-        $routes->import('../src/**/{routing}.php');
+        $routes->import("../config/{routes}/{$this->environment}/*.yaml");
+        $routes->import('./**/{routing}.php');
+        $routes->import("./**/{routing}_{$this->environment}.php");
     }
 }
