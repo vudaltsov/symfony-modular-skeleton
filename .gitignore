@@ -7,4 +7,5 @@
 /public/bundles/
 /var/
 /vendor/
+/src/.preload.php
 ###< symfony/framework-bundle ###
