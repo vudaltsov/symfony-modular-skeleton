@@ -21,9 +21,9 @@ final class Kernel extends BaseKernel
 
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
-        $routes->import('../config/{routes}/*.yaml');
         $routes->import("../config/{routes}/{$this->environment}/*.yaml");
-        $routes->import('./**/{routing}.php');
+        $routes->import('../config/{routes}/*.yaml');
         $routes->import("./**/{routing}_{$this->environment}.php");
+        $routes->import('./**/{routing}.php');
     }
 }
